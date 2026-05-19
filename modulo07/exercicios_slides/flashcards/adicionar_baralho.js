@@ -1,4 +1,4 @@
-import { baralhos } from "./data.js";
+import { baralhos } from "./dados.js";
 
 function adicionarBaralho(titulo) {
   if (!titulo) {

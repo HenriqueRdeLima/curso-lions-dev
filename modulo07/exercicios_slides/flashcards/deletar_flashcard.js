@@ -1,4 +1,4 @@
-import { flashcards } from "./data.js";
+import { flashcards } from "./dados.js";
 
 function deletarFlashcard(id) {
     const idNum = parseInt(id);

@@ -1,4 +1,4 @@
-import { baralhos, flashcards } from "./data.js";
+import { baralhos, flashcards } from "./dados.js";
 
 function deletarBaralho(id) {
     const idNum = parseInt(id);

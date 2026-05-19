@@ -1,4 +1,4 @@
-import { baralhos, flashcards } from "./data.js";
+import { baralhos, flashcards } from "./dados.js";
 
 function adicionarFlashcard(pergunta, resposta, idBaralho) {
   // Validação (lógica do Modulo07/adicionarFlashcard.js)

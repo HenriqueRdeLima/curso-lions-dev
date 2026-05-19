@@ -1,4 +1,4 @@
-import { flashcards } from "./data.js";
+import { flashcards } from "./dados.js";
 
 function atualizarFlashcard(id, pergunta, resposta, idBaralho) {
   const idNum = parseInt(id);

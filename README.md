@@ -32,18 +32,19 @@ Este repositório contém todo o material de apoio das aulas: conteúdo teórico
 
 ## 📁 Estrutura de Pastas
 
-Cada módulo **costuma** seguir a organização abaixo. O material teórico em `conteudo/` pode ser **arquivo `.js` comentado** (aula no estilo “código legível”) ou **`.md`** (conteúdo teórico formatado com PDF).
+Cada módulo **costuma** seguir a organização abaixo. O material teórico em `conteudo/` pode ser **arquivo `.js` comentado** (aula no estilo "código legível") ou **`.md`** (conteúdo teórico formatado com PDF).
 
 ```
-ModuloXX/
+moduloXX/
 ├── conteudo/              # Material teórico (.js comentado ou .md/.pdf formatado)
 ├── exercicios_slides/     # Exercícios feitos em aula (ao vivo)
+├── lista_de_exercicios/   # Listas em PDF e Markdown para prática individual
 └── exercicios_resolvidos/ # Gabarito e soluções de referência
 ```
 
-> Nem todo módulo terá as três pastas ao mesmo tempo. Exemplo: o **Módulo 03** tem `conteudo/` e `exercicios_slides/`; o gabarito da calculadora em aula fica no próprio `exercicios_slides/calculadora.js` até existir uma pasta `exercicios_resolvidos/` separada, se desejado.
+> Nem todo módulo terá as quatro pastas ao mesmo tempo. Exemplo: o **Módulo 03** tem `conteudo/` e `exercicios_slides/`; o gabarito da calculadora em aula fica no próprio `exercicios_slides/calculadora.js`.
 
-> Alguns módulos também possuem a pasta `lista_de_exercicios/` com listas em formato PDF e Markdown para prática individual.
+> O repositório também possui a pasta `provas/` com materiais de avaliação.
 
 ### Convenções de extensão (`.js` e `.md`)
 
