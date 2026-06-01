@@ -18,3 +18,6 @@ _mantenedor/skills/
 
 # Configurações de extensões/AI
 .codex
+
+# Configurações do VSCODE
+.vscode/

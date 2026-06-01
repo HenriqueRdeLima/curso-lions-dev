@@ -1,0 +1,28 @@
+{
+  "name": "api-banco-digital-lionsbank",
+  "version": "1.0.0",
+  "description": "Projeto resolvido de API bancária com MVC, autenticação, MongoDB e deploy.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "mongoose",
+    "mvc",
+    "jwt",
+    "bcrypt",
+    "banking-api"
+  ],
+  "author": "LionsDev",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.24.0"
+  }
+}

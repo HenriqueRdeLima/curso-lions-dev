@@ -223,6 +223,18 @@ Regras:
 1. A rota deve ser protegida por JWT.
 2. Retornar todos os usuários sem `senhaHash`.
 
+### 6.6 Remover Minha Conta
+
+Crie a rota `DELETE /api/usuarios/perfil`.
+
+Regras:
+
+1. A rota deve ser protegida por JWT.
+2. Usar o `id` do usuário que veio do token.
+3. Remover a conta do usuário logado.
+4. Retornar uma mensagem de sucesso.
+5. Se o usuário não existir mais, retornar status `404`.
+
 ---
 
 ## 7. Testes Esperados
@@ -236,7 +248,9 @@ Teste o fluxo nessa ordem:
 5. Acessar `GET /api/usuarios/perfil` sem token e receber `401`.
 6. Acessar `GET /api/usuarios/perfil` com token válido e receber os dados.
 7. Atualizar o nome do usuário logado.
-8. Fazer deploy no Render configurando as variáveis de ambiente.
+8. Listar usuários com token válido.
+9. Remover a própria conta com token válido.
+10. Fazer deploy no Render configurando as variáveis de ambiente.
 
 ---
 

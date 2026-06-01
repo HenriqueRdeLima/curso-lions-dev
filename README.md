@@ -26,7 +26,7 @@ Este repositório contém todo o material de apoio das aulas: conteúdo teórico
 | 06  | **Organização de Projetos**    | Estruturação de projetos com múltiplos arquivos e CRUD em memória                                                        |
 | 07  | **APIs REST com Express**      | Criação de APIs RESTful com Express.js e dados em memória                                                                |
 | 08  | **Banco de Dados (MongoDB)**   | Integração com MongoDB via Mongoose, modelos e rotas                                                                     |
-| 09  | **Deploy**                     | Publicar a aplicação na nuvem com Render.com                                                                             |
+| 09  | **Autenticação, MVC e Deploy** | Senhas com bcrypt, autenticação com JWT, APIs em camadas e publicação no Render.com                                      |
 
 ---
 
@@ -57,14 +57,18 @@ moduloXX/
 
 ## 📦 Sobre as Dependências
 
-As dependências de **todos** os módulos estão centralizadas em um único `package.json` na raiz do projeto. Essa é uma decisão intencional para simplificar o setup dos alunos: com um único `npm install` na raiz, todas as ferramentas ficam disponíveis para qualquer módulo.
+As dependências dos exemplos gerais ficam centralizadas no `package.json` da raiz para simplificar o setup dos alunos: com um único `npm install` na raiz, as ferramentas principais ficam disponíveis para os módulos iniciais e intermediários.
 
-| Pacote        | Usado a partir de | Função                                              |
-| ------------- | ----------------- | --------------------------------------------------- |
-| `prompt-sync` | Módulo 02         | Capturar entrada de dados do usuário no terminal    |
-| `express`     | Módulo 07         | Framework para criação de APIs REST                 |
-| `mongoose`    | Módulo 08         | ODM para integração com MongoDB                     |
-| `dotenv`      | Módulo 08         | Carregar variáveis de ambiente de um arquivo `.env` |
+Projetos completos pensados para deploy podem ter `package.json` próprio dentro da pasta do projeto. Esse é o caso dos exemplos resolvidos do Módulo 09 em `modulo09/exercicios_resolvidos/autenticacao_mvc` e `modulo09/exercicios_resolvidos/api_banco_digital`, porque eles precisam funcionar como APIs independentes no Render.
+
+| Pacote         | Usado a partir de | Onde está declarado                         | Função                                              |
+| -------------- | ----------------- | ------------------------------------------- | --------------------------------------------------- |
+| `prompt-sync`  | Módulo 02         | `package.json` da raiz                      | Capturar entrada de dados do usuário no terminal    |
+| `express`      | Módulo 07         | `package.json` da raiz e projetos de API    | Framework para criação de APIs REST                 |
+| `mongoose`     | Módulo 08         | `package.json` da raiz e projetos de API    | ODM para integração com MongoDB                     |
+| `dotenv`       | Módulo 08         | `package.json` da raiz e projetos de API    | Carregar variáveis de ambiente de um arquivo `.env` |
+| `bcryptjs`     | Módulo 09         | Projetos completos do Módulo 09             | Gerar hash de senhas                                |
+| `jsonwebtoken` | Módulo 09         | Projetos completos do Módulo 09             | Criar e validar tokens JWT                          |
 
 ---
 
