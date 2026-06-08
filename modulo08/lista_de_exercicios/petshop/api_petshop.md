@@ -35,7 +35,7 @@
 
 Um petshop chamado **PetLions** deseja modernizar seus processos. Atualmente, o agendamento de serviços de banho e tosa é feito em uma folha de papel, o que costuma causar perda de informações.
 
-Eles precisam de uma API REST simples que conecte a um banco de dados MongoDB (usando Mongoose) para gerenciar esses agendamentos de forma persistente, garantindo que as informações não sejam perdidas quando o servidor reiniciar. A estrutura deve seguir o modelo de organização modular aprendido em aula (`db.js`, `server.js`, `models/` e `routes/`).
+Eles precisam de uma API REST simples que conecte a um banco de dados MongoDB (usando Mongoose) para gerenciar esses agendamentos de forma persistente, garantindo que as informações não sejam perdidas quando o servidor reiniciar. A estrutura deve seguir o modelo usado em aula: `server.js`, `db.js` e `models/`, com as rotas escritas diretamente no `server.js`.
 
 ---
 
@@ -45,10 +45,11 @@ Crie uma API Node.js com Express e Mongoose.
 
 Requisitos estruturais:
 * Crie um arquivo `.env` contendo as variáveis `MONGO_URI` e `PORT` (porta `3000`).
-* Crie o arquivo `db.js` para gerenciar a conexão com o MongoDB.
-* Crie o arquivo `server.js` como ponto de entrada da aplicação.
-* Crie a pasta `models` e nela o arquivo `agendamento.js`.
-* Crie a pasta `routes` e nela o arquivo `agendamento.js`.
+* Crie a pasta `src`.
+* Crie o arquivo `src/db.js` para gerenciar a conexão com o MongoDB.
+* Crie o arquivo `src/server.js` como ponto de entrada da aplicação.
+* Crie a pasta `src/models` e nela o arquivo `agendamento.js`.
+* Todas as rotas devem ficar no `src/server.js`, como fizemos em sala.
 
 ### O Modelo (Schema) do Agendamento
 
@@ -147,7 +148,7 @@ Realize testes na sua API seguindo este fluxo de validação:
 
 * No arquivo `db.js`, use `mongoose.connect(process.env.MONGO_URI)` envolvido in um `try/catch` assíncrono.
 * No `findByIdAndUpdate`, passe `{ new: true, runValidators: true }` para que o Mongoose aplique as validações e retorne o registro já atualizado.
-* Lembre-se de usar `app.use(express.json())` no `server.js` para conseguir ler o corpo das requisições.
+* Lembre-se de usar `app.use(express.json())` no `src/server.js` para conseguir ler o corpo das requisições.
 
 ---
 

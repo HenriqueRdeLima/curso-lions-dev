@@ -6,42 +6,37 @@ import mongoose from "mongoose";
 const HospedeSchema = new mongoose.Schema({
   nome: {
     type: String,
-    required: [true, "O nome do hóspede é obrigatório."]
+    required: [true, "O nome do hóspede é obrigatório."],
   },
   idade: {
     type: Number,
-    required: [true, "A idade do hóspede é obrigatória."]
-  }
+    required: [true, "A idade do hóspede é obrigatória."],
+  },
 });
 
 // Schema Principal da Reserva
 const ReservaSchema = new mongoose.Schema({
-  // RELACIONAMENTO (Chave Estrangeira / Referência):
-  // imovelId guarda o ID único de um documento na coleção de Imóveis.
-  // - O tipo deve ser mongoose.Schema.Types.ObjectId.
-  // - O atributo 'ref' avisa o Mongoose qual modelo está associado (neste caso, "Imovel").
-  //   Isso permite usar o método '.populate()' nas rotas para buscar os detalhes do imóvel automaticamente.
+  // Guarda o _id do imóvel reservado como texto, no mesmo formato usado em aula.
   imovelId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Imovel",
-    required: [true, "O ID do imóvel é obrigatório."]
+    type: String,
+    required: [true, "O ID do imóvel é obrigatório."],
   },
   nomeHospede: {
     type: String,
-    required: [true, "O nome do responsável pela reserva é obrigatório."]
+    required: [true, "O nome do responsável pela reserva é obrigatório."],
   },
   emailHospede: {
     type: String,
-    required: [true, "O e-mail do responsável é obrigatório."]
+    required: [true, "O e-mail do responsável é obrigatório."],
   },
   // Tipo Date para trabalhar com datas e cálculos de tempo no JavaScript
   dataEntrada: {
     type: Date,
-    required: [true, "A data de check-in é obrigatória."]
+    required: [true, "A data de check-in é obrigatória."],
   },
   dataSaida: {
     type: Date,
-    required: [true, "A data de check-out é obrigatória."]
+    required: [true, "A data de check-out é obrigatória."],
   },
   // SUBDOCUMENTOS EM ARRAY:
   // O MongoDB permite guardar um array de objetos estruturados.
@@ -49,22 +44,19 @@ const ReservaSchema = new mongoose.Schema({
   // esse campo é um array de subdocumentos que seguem aquele modelo de Hóspede.
   hospedes: {
     type: [HospedeSchema],
-    required: [true, "A lista de hóspedes é obrigatória."]
-  },
-  cupomDesconto: {
-    type: String
+    required: [true, "A lista de hóspedes é obrigatória."],
   },
   valorTotal: {
-    type: Number
+    type: Number,
   },
   status: {
     type: String,
     default: "Pendente",
     enum: {
       values: ["Pendente", "Confirmada", "Cancelada"],
-      message: "Status inválido."
-    }
-  }
+      message: "Status inválido.",
+    },
+  },
 });
 
 // Compila o modelo. Ele criará a coleção "reservas" no MongoDB.
